@@ -129,7 +129,7 @@ Resources:
       Environment:
         Type: LINUX_CONTAINER
         ComputeType: BUILD_GENERAL1_SMALL
-        Image: aws/codebuild/amazonlinux2-x86_64-standard:2.0
+        Image: aws/codebuild/standard:2.0
       Source:
         Type: CODEPIPELINE
         BuildSpec: !Sub |
@@ -140,9 +140,9 @@ Resources:
                 python: 3.7 
               commands:
                 - echo "Installing wget and boto3"
-                - pip3 install wget
-                - pip3 install boto3
-                - pip3 install numpy
+                - pip install wget
+                - pip install boto3
+                - pip install numpy
             build:
               commands:
               - echo "Running test.py"
